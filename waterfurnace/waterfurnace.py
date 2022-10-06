@@ -61,6 +61,7 @@ DATA_REQUEST = {
         "TStatRoomTemp",
         "EnteringWaterTemp",
         "AOCEnteringWaterTemp",
+        "auroraoutputrv",
         "lockoutstatus",
         "lastfault",
         "lastlockout",
@@ -71,6 +72,16 @@ DATA_REQUEST = {
         "homeautomationalarm2",
         "roomtemp",
         "activesettings",
+        "iz2_max_zones",
+        "iz2_humidity",
+        "iz2_dehumid_humid_sp",
+        "iz2_humidity_offset_settings",
+        "iz2_z1_activesettings",
+        "iz2_z1_roomtemp",
+        "iz2_z2_activesettings",
+        "iz2_z2_roomtemp",
+        "iz2_z3_activesettings",
+        "iz2_z3_roomtemp",
         "TStatActiveSetpoint",
         "TStatMode",
         "TStatHeatingSetpoint",
@@ -223,6 +234,7 @@ class WaterFurnace(object):
 class WFReading(object):
 
     def __init__(self, data={}):
+        self.data = data
         self.zone = data.get('zone', 0)
         self.err = data.get('err', '')
         self.awlid = data.get('awlid', '')
